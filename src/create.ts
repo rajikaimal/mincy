@@ -1,7 +1,13 @@
 const degit = require("degit");
+const child_process_npm = require("child_process");
 
-function create(url?: string, destination?: string) {
+function npmInstall(path: string) {
+  child_process_npm.execSync("npm install", { cwd: path, stdio: [0, 1, 2] });
+}
+
+function create(url: string, destination: string) {
   console.log(`Creating ${url} ${destination}`);
+  const dest = destination !== null ? destination : __dirname;
 
   if (url !== null) {
     const emitter = degit(url, {
@@ -15,9 +21,11 @@ function create(url?: string, destination?: string) {
     });
 
     emitter
-      .clone(destination !== null ? destination : __dirname)
+      .clone(dest)
       .then(() => {
         console.log("Template created");
+        console.log("Installing dependencies ...");
+        npmInstall(dest);
       })
       .catch((err: string) => {
         console.log("Error cloning");

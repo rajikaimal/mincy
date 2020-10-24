@@ -19,7 +19,6 @@ program
   .command("create [url] [destination]")
   .description("Create Svelte app")
   .action((url: string, destination: string) => {
-    console.log(url, destination);
     createApp(url, destination);
   });
 
@@ -44,7 +43,6 @@ program
     startApp();
   });
 
-console.log("prad", process.argv);
 program.parse(process.argv);
 
 if (!process.argv.slice(2).length) {

@@ -6,14 +6,14 @@ function npmInstall(path: string) {
 }
 
 function create(url: string, destination: string) {
-  console.log(`Creating ${url} ${destination}`);
+  console.log(`creating ${url} ${destination}`);
   const dest = destination !== null ? destination : __dirname;
 
   if (url !== null) {
     const emitter = degit(url, {
       cache: true,
       force: true,
-      verbose: true,
+      verbose: false,
     });
 
     emitter.on("info", (info: any) => {
@@ -23,12 +23,12 @@ function create(url: string, destination: string) {
     emitter
       .clone(dest)
       .then(() => {
-        console.log("Template created");
-        console.log("Installing dependencies ...");
+        console.log("template created");
+        console.log("installing dependencies ...");
         npmInstall(dest);
       })
       .catch((err: string) => {
-        console.log("Error cloning");
+        console.log("error cloning");
       });
   }
 }

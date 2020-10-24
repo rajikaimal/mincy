@@ -5,17 +5,31 @@ Svelte CLI
 ## Install
 
 ```
-
+$ npm i -g mincy
 ```
 
 ## Usage
 
 ### Commands
 
-#### create
+```
+# clone Svelte template
+$ mincy clone sveltejs/template /projects/
+```
 
 ```
-$ mincy create user/repo destination
+# run
+$ mincy run sveltejs/template /projects/
+```
+
+```
+# start dev server
+$ mincy start sveltejs/template /projects/
+```
+
+```
+# build
+$ mincy build sveltejs/template /projects/
 ```
 
 MIT

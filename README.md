@@ -19,17 +19,17 @@ $ mincy clone sveltejs/template /projects/
 
 ```
 # run
-$ mincy run sveltejs/template /projects/
+$ mincy run
 ```
 
 ```
 # start dev server
-$ mincy start sveltejs/template /projects/
+$ mincy start
 ```
 
 ```
 # build
-$ mincy build sveltejs/template /projects/
+$ mincy build
 ```
 
 MIT

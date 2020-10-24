@@ -11,7 +11,7 @@ function create(url: string, destination: string) {
 
   if (url !== null) {
     const emitter = degit(url, {
-      cache: true,
+      cache: false,
       force: true,
       verbose: false,
     });
@@ -28,7 +28,7 @@ function create(url: string, destination: string) {
         npmInstall(dest);
       })
       .catch((err: string) => {
-        console.log("error cloning");
+        console.log("error cloning", err);
       });
   }
 }

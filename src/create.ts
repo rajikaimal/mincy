@@ -1,7 +1,7 @@
 const degit = require("degit");
 
-function create(name: string, url?: string, destination?: string) {
-  console.log(`Creating ${name} ${url} ${destination}`);
+function create(url?: string, destination?: string) {
+  console.log(`Creating ${url} ${destination}`);
 
   if (url !== null) {
     const emitter = degit(url, {

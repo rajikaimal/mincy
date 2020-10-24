@@ -28,7 +28,7 @@ function exec(cmd) {
 }
 
 describe('mincy', () => {
-  it('allows flags wherever', async () => {
+  it('creates an app', async () => {
     await exec(`node ${mincyPath} create rajikaimal/mincy-test /tmp/mincy`);
     compare(`/tmp/mincy`, {
       'README.md': '# mincy-test',
